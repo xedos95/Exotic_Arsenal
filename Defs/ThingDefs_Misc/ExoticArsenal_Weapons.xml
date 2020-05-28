@@ -44,7 +44,8 @@
 <ThingDef ParentName="BaseExoticGun">
     <defName>Exotic_MonoAuto</defName>
     <label>mono auto-pistol</label>
-    <description>A semi-smart autopistol with high accuracy automatic aiming system. Fires Monosteel bullets capable of piercing any armor with ease. Great especially at short range.</description>
+    <description>A semi-smart autopistol with high accuracy automatic aiming system. Fires Mono-steel bullets capable of piercing any armor with ease. especially effective at short range. The design of this weapon was requested by a DCP administrators as a means of combating the mechanoid menace on distant Rimworlds.
+</description>
     <graphicData>
       <texPath>Things/Item/A16/MonoPistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
