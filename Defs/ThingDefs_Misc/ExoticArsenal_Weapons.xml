@@ -116,7 +116,7 @@
     <defName>Bullet_Mono_Autopistol</defName>
     <label>monosteel bullet</label>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <texPath>Things/Projectile/Monosteel</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
