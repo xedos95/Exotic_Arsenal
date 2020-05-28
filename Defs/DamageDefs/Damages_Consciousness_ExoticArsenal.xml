@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <DamageDef>
+    <defName>Exotic_SystemShockDamage</defName>
+    <label>nerve system shock</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shocked to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <hediffSolid>Burn</hediffSolid>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Heat</armorCategory>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<additionalHediffs>
+      <li>
+        <hediff>Exotic_Consciousness</hediff>
+      </li>
+    </additionalHediffs>
+	</DamageDef>
+
+</Defs>

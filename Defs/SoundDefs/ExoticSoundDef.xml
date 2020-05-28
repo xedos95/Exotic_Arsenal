@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+    <SoundDef>
+    <defName>Shot_Thermal</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+        <subSounds>
+            <li>
+                <grains>
+                <li Class="AudioGrain_Folder">
+                <clipPath>Weapons/Ranged/Thermal</clipPath> <!--==Shooting sound==-->
+            </li>
+                </grains>      
+                <volumeRange>
+                    <min>45.2941</min>        
+                    <max>45.2941</max>
+                </volumeRange>      
+                <pitchRange>
+                    <min>1.091765</min>        
+                    <max>1</max>
+                </pitchRange>      
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+	 <SoundDef>
+    <defName>Shot_Sword</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+        <subSounds>
+            <li>
+                <grains>
+                <li Class="AudioGrain_Folder">
+                <clipPath>Weapons/Melee/Sword</clipPath> <!--==Shooting sound==-->
+            </li>
+                </grains>      
+                <volumeRange>
+                    <min>45.2941</min>        
+                    <max>45.2941</max>
+                </volumeRange>      
+                <pitchRange>
+                    <min>1.091765</min>        
+                    <max>1</max>
+                </pitchRange>      
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+	 <SoundDef>
+    <defName>Swordpickup</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+        <subSounds>
+            <li>
+                <grains>
+                <li Class="AudioGrain_Folder">
+                <clipPath>Weapons/Melee/Sword_pickup</clipPath> <!--==Shooting sound==-->
+            </li>
+                </grains>      
+                <volumeRange>
+                    <min>45.2941</min>        
+                    <max>45.2941</max>
+                </volumeRange>      
+                <pitchRange>
+                    <min>1.091765</min>        
+                    <max>1</max>
+                </pitchRange>      
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+</Defs>	
+	

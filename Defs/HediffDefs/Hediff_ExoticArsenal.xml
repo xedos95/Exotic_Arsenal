@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- ====================== ZEUS SHOCK ===================== -->
+
+<Defs>
+ <HediffDef>
+    <defName>Exotic_Consciousness</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor>
+    <label>Nerve system shock</label>
+	<description>an electric shock.</description>
+    <lethalSeverity>1</lethalSeverity>
+    <makesSickThought>true</makesSickThought>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+        <severityPerDayNotImmune>-0.4</severityPerDayNotImmune>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>initial-hidden</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>initial</label>
+        <minSeverity>0.04</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>minor</label>
+		<painOffset>0.05</painOffset>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>moderate</label>
+		<painOffset>0.20</painOffset>
+        <minSeverity>0.3</minSeverity>
+        <vomitMtbDays>3</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>serious</label>
+		<painOffset>0.35</painOffset>
+        <minSeverity>0.5</minSeverity>
+        <vomitMtbDays>1</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>extreme</label>
+		<painOffset>0.6</painOffset>
+        <minSeverity>0.7</minSeverity>
+        <vomitMtbDays>0.5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.10</setMax>
+          </li>
+        </capMods>
+      </li>
+	  <li>
+        <label>fatal</label>
+        <minSeverity>1</minSeverity>
+      </li>
+    </stages>
+  </HediffDef>
+	
+ <!-- ====================== ACID BURN ===================== -->
+	
+   <HediffDef ParentName="InjuryBase">
+    <defName>AcidBurn</defName>
+    <label>acid burn</label>
+    <labelNoun>an acid burn</labelNoun>
+    <description>An acid burn.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>tended</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.30</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>acid burn scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.04475</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Burned off (acid)</destroyedLabel>
+      <destroyedOutLabel>Burned out (acid)</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+</Defs>

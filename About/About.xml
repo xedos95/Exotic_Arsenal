@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>Exotic Arsenal</name>
+	<author>asdmerwd</author>
+    <packageId>Exotic.Arsenal</packageId>
+    <url>sendhelp.com</url>
+	<supportedVersions>
+		<li>1.1</li>
+	</supportedVersions>
+	<modDependenciesByVersion>
+    <v1.1>
+      <li>
+        <packageId>jecrell.jecstools</packageId>
+        <displayName>JecsTools</displayName>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/932008009</steamWorkshopUrl>
+      </li>
+	  <li>
+        <packageId>brrainz.harmony</packageId>
+        <displayName>Harmony</displayName>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+        <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+    </v1.1>
+  </modDependenciesByVersion>
+	<description>"When's theres rains, there's always a rainbow." here at Etenracorp, we provide a colorful range of weaponary that can brighten those stormy days that range from a DCP invasion or something menacing that just wants to eat.
+	- adds eleven exotic weaponary created by your friends Ethernacorp!
+	- Why need the protection of the DCP when you have our weapons to do the dirty work?
+	-  To FEED THE CONFLICT WITHIN.
+	
+	- Shout outs:
+	- Xedos: Fanastic artwork with the guns
+	- Novangard: Lore keeping and story
+	- Masterchefjc: gun coding and sounds beast
+	- Ogliss: The myth, the legend, the gun master of coding
+	- GneomX: Amazing artist with talent that could win him America's Got Talent.
+	
+	- Credits:
+	- http://soundbible.com/1980-Swords-Collide.html
+	- ChefBoyjc 
+	- https://freesound.org/people/Julien%20Matthey/sounds/105016/
+	
+	
+	- Furture Content:
+	- An fanmade comic strip
+	- Swamp Things
+	- DCP faction @ Heart of Temptation Endgame
+	- Ethercorp
+	
+	- Requesting DCP backup:
+	- The DCP is looking for artist, coders, and those creative minds to make the DCP universe come into reality.
+	- Join the team today and become a full-fedged  DSU agent!
+	
+	</description>
+</ModMetaData>

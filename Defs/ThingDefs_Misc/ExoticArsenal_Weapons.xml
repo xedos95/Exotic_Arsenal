@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ====================== ParentName Def  TODO: ADD A NEW CRAFTING BENCH ===================== -->
+
+<Defs>
+<ThingDef Name="BaseExoticGun" Abstract="True" ParentName="BaseWeapon">
+    <techLevel>Ultra</techLevel>
+    <smeltable>true</smeltable>
+	<tradeability>Sellable</tradeability>
+    <thingCategories>
+        <li>WeaponsRanged</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <statBases>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>DCPGunBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+  </ThingDef>
+ 
+ 
+ <!-- ====================== Mono-Autopistol  TODO: Add a projectile artwork ===================== -->
+
+<ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_MonoAuto</defName>
+    <label>mono auto-pistol</label>
+    <description>A semi-smart autopistol with high accuracy automatic aiming system. Fires Monosteel bullets capable of piercing any armor with ease. Great especially at short range.</description>
+    <graphicData>
+      <texPath>Things/Item/A16/MonoPistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+       <generateCommonality>0.1</generateCommonality>
+    <statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>1.2</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.60</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Plasteel>60</Plasteel>
+      <Uranium>20</Uranium>
+      <ComponentSpacer>6</ComponentSpacer>      
+      <ExoticEngram>1</ExoticEngram>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Mono_Autopistol</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+		<burstShotCount>3</burstShotCount>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Mono_Autopistol</defName>
+    <label>monosteel bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <armorPenetrationBase>0.6</armorPenetrationBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+	
+<!-- ====================== Shock Assault Blaster TODO: A BULLET ART, AND REBALANCE ===================== -->
+
+<ThingDef ParentName="BaseBullet">
+    <defName>Exotic_Zeus_bullet</defName>
+    <label>Shock assault blaster shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/Zeus</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+        <damageDef>Exotic_SystemShockDamage</damageDef>
+        <damageAmountBase>1</damageAmountBase>
+        <stoppingPower>0.5</stoppingPower>
+        <speed>65</speed>
+    </projectile>
+  </ThingDef>
+ 
+ <ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_Zeus</defName>
+    <label>Shock assault blaster</label>
+    <description>A electric energy blaster, equipped with accelerated arc coils providing stable rapid fire. Utilize high voltage projectiles to paralyse hostile targets via electric damage to the nervous system. Used commonly as a non-leathal  weapon by DCP UCAT Units.</description>
+    <graphicData>
+        <texPath>Things/Item/A16/Zeus</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+		<drawSize>1.3</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+        <WorkToMake>52000</WorkToMake>
+        <MarketValue>2000</MarketValue>
+        <Mass>1.2</Mass>
+            <AccuracyTouch>0.40</AccuracyTouch>
+            <AccuracyShort>0.45</AccuracyShort>
+            <AccuracyMedium>0.75</AccuracyMedium>
+            <AccuracyLong>0.75</AccuracyLong>
+            <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+	</comps>
+    <costList>
+        <Steel>75</Steel>
+        <Plasteel>50</Plasteel>
+        <ComponentIndustrial>8</ComponentIndustrial>
+        <ComponentSpacer>4</ComponentSpacer>
+		<ExoticEngram>4</ExoticEngram>
+    </costList>
+    <recipeMaker>
+	  <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+      <unfinishedThingDef Inherit="False">UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+    <techLevel>Ultra</techLevel>
+    <weaponTags Inherit="False">
+    <li>SpacerGun</li>
+    </weaponTags>
+        <generateCommonality>0.1</generateCommonality>
+    <equippedStatOffsets>
+    </equippedStatOffsets>
+    <verbs>
+        <li>
+            <verbClass>Verb_Shoot</verbClass>
+            <label>Standard</label>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Exotic_Zeus_bullet</defaultProjectile>
+            <warmupTime>2</warmupTime>
+            <range>25</range>
+            <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>Shot_Autopistol</soundCast>
+            <soundCastTail>GunTail_Light</soundCastTail>
+            <muzzleFlashScale>14</muzzleFlashScale>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+ </ThingDef>
+	
+   <!-- ====================== Hard Light Sniper Rifle  ===================== -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Exotic_HLSniper_bullet</defName>
+    <label>hard light shot</label>
+    <description>A focused, hardened light.</description>
+    <graphicData>
+      <texPath>Things/Projectile/Longlaser</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+        <damageDef>HL_Bullet</damageDef>
+        <damageAmountBase>46</damageAmountBase>
+        <armorPenetrationBase>1</armorPenetrationBase>
+        <stoppingPower>3</stoppingPower>
+		<speed>80</speed>
+    </projectile>
+  </ThingDef>
+ 
+ <ThingDef ParentName="BaseExoticGun">
+    <defName>EXGun_HLSniper</defName>
+    <label>S-CR</label>
+    <description>(Sniper Class rifle) A long ranged weapon that fires a hard light laser at an enemy.</description>
+    <graphicData>
+        <texPath>Things/Item/A16/HLSniper</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+		<drawSize>1.5</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+        <WorkToMake>52000</WorkToMake>
+        <MarketValue>3600</MarketValue>
+        <Mass>3.8</Mass>
+            <AccuracyTouch>0.64</AccuracyTouch>
+            <AccuracyShort>0.85</AccuracyShort>
+            <AccuracyMedium>0.92</AccuracyMedium>
+            <AccuracyLong>0.88</AccuracyLong>
+            <RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+        <Steel>65</Steel>
+        <Plasteel>70</Plasteel>
+        <ComponentSpacer>8</ComponentSpacer>
+	<ExoticEngram>1</ExoticEngram>
+    </costList>
+    <recipeMaker>
+	<researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+      <unfinishedThingDef Inherit="False">UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+    <techLevel>Ultra</techLevel>
+    <weaponTags Inherit="False">
+    <li>SpacerGun</li>
+    </weaponTags>
+        <generateCommonality>0.1</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.15</MoveSpeed> <!-- drawback -->
+    </equippedStatOffsets>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+	</comps>
+    <verbs>
+        <li>
+            <verbClass>Verb_Shoot</verbClass>
+            <label>Standard</label>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Exotic_HLSniper_bullet</defaultProjectile> <!-- idk what this does -->
+            <warmupTime>4.6</warmupTime>
+            <range>44.9</range>
+            <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>ChargeLance_Fire</soundCast>
+            <soundCastTail>GunTail_Heavy</soundCastTail>
+            <muzzleFlashScale>14</muzzleFlashScale>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+ </ThingDef>
+	
+ <!-- ====================== Hard Light SMG  ===================== -->
+	
+   <ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_LaserSMG</defName>
+    <label>HL-SMG </label>
+    <description>An alternative to the mono-pistol that fires more rapidly.</description>
+    <graphicData>
+      <texPath>Things/Item/A16/LaserSMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+	  <Steel>75</Steel>
+      <Plasteel>55</Plasteel>
+      <ComponentSpacer>7</ComponentSpacer>
+	   <ExoticEngram>1</ExoticEngram>
+    </costList>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+	</comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ExoticLaserSMG</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>22.9</range>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>11</ticksBetweenBurstShots>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+	<JecsTools.ThingDef_LaserProjectile ParentName="BaseBullet">
+		<defName>Bullet_ExoticLaserSMG</defName>
+		<label>laser</label>
+		<graphicData>
+			<texPath>Things/Projectile/LaserSMG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<flyOverhead>false</flyOverhead>
+			<speed>70</speed>
+		</projectile>
+		<preFiringInitialIntensity>0</preFiringInitialIntensity>
+		<preFiringFinalIntensity>2</preFiringFinalIntensity>
+		<postFiringInitialIntensity>2</postFiringInitialIntensity>
+		<postFiringFinalIntensity>0</postFiringFinalIntensity>
+		<preFiringDuration>2</preFiringDuration>
+		<postFiringDuration>63</postFiringDuration>
+		<StartFireChance>0.000</StartFireChance>				
+		<thingClass>JecsTools.Projectile_Laser</thingClass>
+	</JecsTools.ThingDef_LaserProjectile>
+	
+	<!-- ====================== BioWeapon TODO: BALANCE TWEAKS ===================== -->
+	
+<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_BioGun</defName>
+    <label>acid spray</label>
+    <graphicData>
+      <texPath>Things/Projectile/Acid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Acid</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+<ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_BioGun</defName>
+    <label>A-IC</label>
+    <description>Acid-infused Infiltration Cannon. A massive weapon that burns through structures and anything that gets in the way with acid burn</description>
+    <graphicData>
+      <texPath>Things/Item/A16/biogun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <generateCommonality>0.1</generateCommonality>
+    <statBases>
+	  <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.10</AccuracyLong>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>1.1</Mass>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+	<costList>
+      <ExoticEngram>1</ExoticEngram>
+    </costList>
+    <recipeMaker>
+	 <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+	<weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+	</comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BioGun</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>14.3</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>DeathAcidifier</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+	
+<!-- ====================== Assault shotgun rifle XT24 ===================== -->	
+	
+<ThingDef ParentName="BaseBullet">
+    <defName>Exotic_Shotgun_one</defName>
+    <label>charge shotgun blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/XT24_1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+	  <armorPenetrationBase>0.45</armorPenetrationBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>60</speed>
+    </projectile>
+  </ThingDef>
+  
+   <ThingDef ParentName="BaseBullet">
+    <defName>Exotic_Shotgun_two</defName>
+    <label>charge shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+   
+	<ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_Shotgun</defName>
+    <label>Assault shotgun rifle XT24</label>
+    <description>One of the DSU's favorie weapons.</description>
+    <graphicData>
+      <texPath>Things/Item/A16/XT24</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>3.4</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.87</AccuracyShort>
+      <AccuracyMedium>0.77</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentSpacer>6</ComponentSpacer>
+	  <ExoticEngram>1</ExoticEngram>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <verbs>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Exotic_Shotgun_one</defaultProjectile>
+			<warmupTime>0.9</warmupTime>
+			<range>13</range>
+			<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+			<burstShotCount>1</burstShotCount>
+			<soundCast>Shot_Shotgun</soundCast>
+			<soundCastTail>GunTail_Heavy</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<label>Shotgun</label>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Exotic_Shotgun_one</defaultProjectile>
+			<warmupTime>0.9</warmupTime>
+			<range>13</range>
+			<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+			<burstShotCount>1</burstShotCount>
+			<soundCast>Shot_Shotgun</soundCast>
+			<soundCastTail>GunTail_Heavy</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<label>Assault Rifle</label>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Exotic_Shotgun_two</defaultProjectile>
+			<warmupTime>1.0</warmupTime>
+			<range>25.9</range>
+			<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+			<burstShotCount>3</burstShotCount>
+			<soundCast>Shot_ChargeRifle</soundCast>
+			<soundCastTail>GunTail_Heavy</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+		<li Class="CompToggleFireMode.CompProperties_ToggleFireMode"></li>
+   </comps>
+  </ThingDef>
+	
+  <!-- ====================== Flux Blaster  ===================== -->
+
+ <ThingDef ParentName="BaseBullet">
+    <defName>Exotic_Flux_one</defName>
+    <label>Flux blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Flux1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+        <damageDef>Bullet</damageDef>
+        <damageAmountBase>3</damageAmountBase>
+        <stoppingPower>0.5</stoppingPower>
+        <speed>90</speed>
+    </projectile>
+  </ThingDef>
+  
+   <ThingDef ParentName="BaseBullet">
+    <defName>Exotic_Flux_two</defName>
+    <label>Flux blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Flux2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+        <damageDef>Bullet</damageDef>
+        <damageAmountBase>6</damageAmountBase>
+        <stoppingPower>0.5</stoppingPower>
+        <speed>80</speed>
+    </projectile>
+  </ThingDef>
+  
+     <ThingDef ParentName="BaseBullet">
+    <defName>Exotic_Flux_three</defName>
+    <label>Flux blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Flux3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+        <damageDef>Bullet</damageDef>
+        <damageAmountBase>9</damageAmountBase>
+        <stoppingPower>0.5</stoppingPower>
+        <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+ <ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_FluxBlaster</defName>
+    <label>Flux Blaster</label>
+    <description>A charged-shot assault rifle. Pulse-charge technology charges each shot with unstable energy as it leaves the barrel. Released on impact, the charged energy greatly increases the damage done.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Item/A16/Flux</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.3</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>4.6</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.64</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>2.00</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+	
+	<verbs>
+			<li>
+				<label>Focused</label>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Exotic_Flux_one</defaultProjectile>
+				<warmupTime>1.0</warmupTime>
+				<range>25.9</range>
+				<burstShotCount>1</burstShotCount>
+				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+			<li>
+				<label>Medium</label>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Exotic_Flux_two</defaultProjectile>
+				<warmupTime>1.0</warmupTime>
+				<range>25.9</range>
+				<burstShotCount>1</burstShotCount>
+				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+			<li>
+				<label>Wild</label>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Exotic_Flux_three</defaultProjectile>
+				<warmupTime>1.0</warmupTime>
+				<range>25.9</range>
+				<burstShotCount>1</burstShotCount>
+				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+		<li Class="CompToggleFireMode.CompProperties_ToggleFireMode"></li>
+   </comps>
+  </ThingDef>
+  
+   <!-- ====================== Heavy Laser something that need a name  ===================== -->
+
+<JecsTools.ThingDef_LaserProjectile ParentName="BaseBullet">
+		<defName>Exotic_Bullet_gauss</defName>
+		<label>Heavy laser</label>
+		<graphicData>
+			<texPath>Things/Projectile/Longlaser</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.5</drawSize>
+		</graphicData>
+    <projectile>
+      <speed>175</speed>
+      <damageDef>HL_HeavyBullet</damageDef>
+      <explosionRadius>1.1</explosionRadius>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+		<preFiringInitialIntensity>4</preFiringInitialIntensity>
+		<preFiringFinalIntensity>1</preFiringFinalIntensity>
+		<postFiringInitialIntensity>10</postFiringInitialIntensity>
+		<postFiringFinalIntensity>0.05</postFiringFinalIntensity>
+		<preFiringDuration>2</preFiringDuration>
+		<postFiringDuration>83</postFiringDuration>
+		<StartFireChance>0.000</StartFireChance>	
+        <thingClass>Projectile_Explosive</thingClass>		
+	</JecsTools.ThingDef_LaserProjectile>
+	
+
+<ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_Heavy</defName>
+    <label>EPE-C</label>
+    <description>Energized Photon Emitter Cannon. fires a supercharge hard light laser at an enemy, dealing splash damage</description>
+    <graphicData>
+      <texPath>Things/Item/A16/HardLightBlaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+	<soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>8.5</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.58</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.36</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Exotic_Bullet_gauss</defaultProjectile>
+        <warmupTime>3.8</warmupTime>
+        <range>35.9</range>
+		<forcedMissRadius>0.001</forcedMissRadius>
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>ChargeLance_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+		<targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+	</comps>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+	</ThingDef>
+	
+	<!-- ====================== Heat Blaster TODO: BAAAAAAAAAAAALANCE and shit  ===================== -->
+  
+   <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HeatBlaster</defName>
+    <label>heat blaster shot</label>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>70</speed>
+    </projectile>
+    <graphicData>
+      <texPath>Things/Projectile/Heatblaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+<ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_HeatBlaster</defName>
+    <label>heat blaster</label>
+    <description>A fire blaster used for burning down flamable structures or anomalies.</description>
+    <graphicData>
+      <texPath>Things/Item/A16/Heatblaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HeatBlaster</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>23.9</range>
+        <soundCast>Shot_Thermal</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+	
+  <!-- ====================== Delta Pulse Blade  ===================== -->
+  
+  
+  <ThingDef ParentName="BaseExoticGun">
+    <defName>Exotic_Delta</defName>
+    <label>Delta Blade</label>
+    <description>A deadly blade that enhances one's vision enough to deflect bullets.</description>
+    <soundInteract>Swordpickup</soundInteract>
+    <meleeHitSound>Shot_Sword</meleeHitSound>
+    <graphicData>
+      <texPath>Things/Item/A16/WeaponMelee/Delta_Blade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.1</drawSize>
+    </graphicData>
+	<statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>2</Mass>
+    </statBases>
+	<equippedAngleOffset>-60</equippedAngleOffset>
+	<recipeMaker>
+      <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	
+	<comps>
+      <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon">
+	  <!-- The first value changes how far horizontally the item is from the center -->
+	  <!-- The second changes which layer it is on so setting it to -0.3 would make it appear under your pawn when equipped -->
+	  <!-- The third changes how far vertically the item is from the center -->
+        <northOffset>(0.20,0,0.25)</northOffset>
+        <eastOffset>(-0,0,0.25)</eastOffset>
+        <westOffset>(0,0,0.25)</westOffset>	
+        <southOffset>(0.20,0,0.25)</southOffset>
+      </li>
+	  <li Class="CompDeflector.CompProperties_Deflector">
+			<baseDeflectChance>0.25</baseDeflectChance>
+		 </li>
+    </comps>
+	
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2.6</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>5</amount>
+            <chance>0.3</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2.6</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>5</amount>
+            <chance>0.3</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+	
+  <!-- ====================== Plasma Handgun  ===================== -->
+  
+<ThingDef ParentName="BaseBullet">
+    <defName>bullet_plasma_pistol</defName>
+    <label>charge pistol shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/PlasmaBlast</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>14</damageAmountBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>exotic_plasma_pistol</defName>
+    <label>plasma pistol</label>
+    <description>todo.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Item/A16/PlasmaPistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	   <drawSize>0.8</drawSize>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <statBases>
+      <Mass>1.1</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+      <WorkToMake>52000</WorkToMake>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>DCPGunBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Plasteel>30</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+	<comps>
+	   <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"></li>
+	</comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>bullet_plasma_pistol</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>19</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>ChargeLance_Fire</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+</Defs>
