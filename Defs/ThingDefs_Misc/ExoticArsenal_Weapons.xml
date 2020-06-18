@@ -234,7 +234,8 @@
   <ThingDef ParentName="BaseBullet">
     <defName>Exotic_HLSniper_bullet</defName>
     <label>hard light shot</label>
-    <description>A focused, hardened light.</description>
+    <description> Ultra tech sniper rifle, utilize a Hard Light technology to generate pseudo-kinetic bullets from light and energy. Practically ignores conventional armor and have rather short recharge rate due to lack of overheating.
+</description>
     <graphicData>
       <texPath>Things/Projectile/Longlaser</texPath>
 	  <graphicClass>Graphic_Single</graphicClass>
