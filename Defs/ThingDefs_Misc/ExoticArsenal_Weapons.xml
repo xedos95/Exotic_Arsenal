@@ -234,8 +234,6 @@
   <ThingDef ParentName="BaseBullet">
     <defName>Exotic_HLSniper_bullet</defName>
     <label>hard light shot</label>
-    <description> Ultra tech sniper rifle, utilize a Hard Light technology to generate pseudo-kinetic bullets from light and energy. Practically ignores conventional armor and have rather short recharge rate due to lack of overheating.
-</description>
     <graphicData>
       <texPath>Things/Projectile/Longlaser</texPath>
 	  <graphicClass>Graphic_Single</graphicClass>
@@ -254,7 +252,7 @@
  <ThingDef ParentName="BaseExoticGun">
     <defName>EXGun_HLSniper</defName>
     <label>S-CR</label>
-    <description>(Sniper Class rifle) A long ranged weapon that fires a hard light laser at an enemy.</description>
+    <description>Ultra tech sniper rifle, utilize a Hard Light technology to generate pseudo-kinetic bullets from light and energy. Practically ignores conventional armor and have rather short recharge rate due to lack of overheating.</description>
     <graphicData>
         <texPath>Things/Item/A16/HLSniper</texPath>
         <graphicClass>Graphic_Single</graphicClass>
@@ -341,7 +339,8 @@
    <ThingDef ParentName="BaseExoticGun">
     <defName>Exotic_LaserSMG</defName>
     <label>HL-SMG </label>
-    <description>An alternative to the mono-pistol that fires more rapidly.</description>
+    <description>Ultra tech SMG, capable of emitting consecutive beams of light potent enough to be lethal on short range. Practically ignores conventional armor and have rather short recharge rate due to lack of overheating.
+</description>
     <graphicData>
       <texPath>Things/Item/A16/LaserSMG</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -584,18 +583,6 @@
       </recipeUsers>
     </recipeMaker>
     <verbs>
-		<li>
-			<verbClass>Verb_Shoot</verbClass>
-			<hasStandardCommand>true</hasStandardCommand>
-			<defaultProjectile>Exotic_Shotgun_one</defaultProjectile>
-			<warmupTime>0.9</warmupTime>
-			<range>13</range>
-			<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
-			<burstShotCount>1</burstShotCount>
-			<soundCast>Shot_Shotgun</soundCast>
-			<soundCastTail>GunTail_Heavy</soundCastTail>
-			<muzzleFlashScale>9</muzzleFlashScale>
-      </li>
 		<li>
 			<verbClass>Verb_Shoot</verbClass>
 			<label>Shotgun</label>
