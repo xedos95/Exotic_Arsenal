@@ -44,8 +44,7 @@
 <ThingDef ParentName="BaseExoticGun">
     <defName>Exotic_MonoAuto</defName>
     <label>mono auto-pistol</label>
-    <description>A semi-smart autopistol with high accuracy automatic aiming system. Fires Mono-steel bullets capable of piercing any armor with ease. especially effective at short range. The design of this weapon was requested by a DCP administrators as a means of combating the mechanoid menace on distant Rimworlds.
-</description>
+    <description>A semi-smart autopistol with high accuracy automatic aiming system. Fires Mono-steel bullets capable of piercing any armor with ease. especially effective at short range. The design of this weapon was requested by a DCP administrators as a means of combating the mechanoid menace on distant Rimworlds.</description>
     <graphicData>
       <texPath>Things/Item/A16/MonoPistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -149,7 +148,7 @@
  <ThingDef ParentName="BaseExoticGun">
     <defName>Exotic_Zeus</defName>
     <label>Shock assault blaster</label>
-    <description>A electric energy blaster, equipped with accelerated arc coils providing stable rapid fire. Utilize high voltage projectiles to paralyse hostile targets via electric damage to the nervous system. Used commonly as a non-leathal  weapon by DCP UCAT Units.</description>
+    <description>A electric energy blaster, equipped with accelerated arc coils providing stable rapid fire. Utilize high voltage projectiles to paralyse hostile targets via electric damage to the nervous system. Used commonly as a non-leathal weapon by DCP UCAT Units.</description>
     <graphicData>
         <texPath>Things/Item/A16/Zeus</texPath>
         <graphicClass>Graphic_Single</graphicClass>
@@ -660,8 +659,8 @@
     </graphicData>
     <projectile>
         <damageDef>Bullet</damageDef>
-        <damageAmountBase>3</damageAmountBase>
-        <stoppingPower>0.5</stoppingPower>
+        <damageAmountBase>7</damageAmountBase>
+		<armorPenetrationBase>0.35</armorPenetrationBase>
         <speed>90</speed>
     </projectile>
   </ThingDef>
@@ -676,9 +675,10 @@
     </graphicData>
     <projectile>
         <damageDef>Bullet</damageDef>
-        <damageAmountBase>6</damageAmountBase>
+        <damageAmountBase>13</damageAmountBase>
+		<armorPenetrationBase>0.12</armorPenetrationBase>
         <stoppingPower>0.5</stoppingPower>
-        <speed>80</speed>
+        <speed>75</speed>
     </projectile>
   </ThingDef>
   
@@ -692,9 +692,9 @@
     </graphicData>
     <projectile>
         <damageDef>Bullet</damageDef>
-        <damageAmountBase>9</damageAmountBase>
-        <stoppingPower>0.5</stoppingPower>
-        <speed>70</speed>
+        <damageAmountBase>28</damageAmountBase>
+        <stoppingPower>1.3</stoppingPower>
+        <speed>65</speed>
     </projectile>
   </ThingDef>
 
@@ -716,7 +716,7 @@
       <AccuracyShort>0.64</AccuracyShort>
       <AccuracyMedium>0.55</AccuracyMedium>
       <AccuracyLong>0.45</AccuracyLong>
-      <RangedWeapon_Cooldown>2.00</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
     </statBases>
     <recipeMaker>
       <researchPrerequisite>Exotic_Decoding</researchPrerequisite>
@@ -741,13 +741,13 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Exotic_Flux_one</defaultProjectile>
-				<warmupTime>1.0</warmupTime>
-				<range>25.9</range>
-				<burstShotCount>1</burstShotCount>
-				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<warmupTime>0.7</warmupTime>
+				<range>36.9</range>
+				<burstShotCount>5</burstShotCount>
+				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<soundCast>ChargeLance_Fire</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
+				<muzzleFlashScale>6</muzzleFlashScale>
 			</li>
 			<li>
 				<label>Medium</label>
@@ -755,9 +755,9 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Exotic_Flux_two</defaultProjectile>
 				<warmupTime>1.0</warmupTime>
-				<range>25.9</range>
-				<burstShotCount>1</burstShotCount>
-				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<range>25</range>
+				<burstShotCount>3</burstShotCount>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<soundCast>ChargeLance_Fire</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
@@ -767,13 +767,13 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Exotic_Flux_three</defaultProjectile>
-				<warmupTime>1.0</warmupTime>
-				<range>25.9</range>
+				<warmupTime>2.0</warmupTime>
+				<range>16.9</range>
 				<burstShotCount>1</burstShotCount>
-				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<ticksBetweenBurstShots>9</ticksBetweenBurstShots>
 				<soundCast>ChargeLance_Fire</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
+				<muzzleFlashScale>12</muzzleFlashScale>
 			</li>
 		</verbs>
 	
@@ -947,6 +947,7 @@
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
     <recipeMaker>
+	<researchPrerequisite>Exotic_Decoding</researchPrerequisite>
       <skillRequirements>
         <Crafting>5</Crafting>
       </skillRequirements>
@@ -1095,7 +1096,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>exotic_plasma_pistol</defName>
+    <defName>Exotic_plasma_pistol</defName>
     <label>plasma pistol</label>
     <description>todo.</description>
     <techLevel>Ultra</techLevel>
